@@ -17,14 +17,15 @@ app.use("/api", router);
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(
+    await mongoose.connect(
       `mongodb+srv://${username}:${password}@production.goiveu9.mongodb.net/${database}?retryWrites=true&w=majority`,
       {}
     );
     console.log(`MongoDB Connected...`);
-    app.listen(port, () => {
-      console.log(`Server running at ${port}...`);
-    });
+    // app.listen(port, () => {
+    //   console.log(`Server running at ${port}...`);
+    //   console.log(`PID ${process.pid}...`);
+    // });
   } catch (error: any) {
     console.error(error.message);
   }

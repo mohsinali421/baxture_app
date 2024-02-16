@@ -11,7 +11,7 @@ export const saveUserController = async (req: Request, res: Response) => {
       age,
       hobbies,
     }).save();
-    return res.status(200).json({
+    return res.status(201).json({
       message: "User saved successfully !",
       _id: user._id,
     });
